@@ -1,0 +1,28 @@
+[user]
+	name = YusukeKokubo
+	email = yusuke.kokubo@gmail.com
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+	interactive = auto
+	grep = auto
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+	editor = vim
+	precomposeunicode = true
+	quotepath = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[alias]
+	s = status
+	ci = commit
+	ri = rebase -i
+	co = checkout
+	logg = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
+	logall = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
