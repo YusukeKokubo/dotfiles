@@ -1,8 +1,4 @@
-set number
-
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
+set number relativenumber
 
 inoremap <C-A> <Home>
 inoremap <C-E> <End>
