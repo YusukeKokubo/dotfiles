@@ -26,6 +26,7 @@
 	bfm = branch -f master origin/master
 	ci = commit
 	cia = commit --amend
+	r  = rebase
 	ri = rebase -i
 	rc = rebase --continue
 	ra = rebase --abort
