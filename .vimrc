@@ -18,3 +18,5 @@ inoremap <C-F> <Right>
 inoremap <C-B> <Left>
 inoremap <C-D> <Del>
 
+inoremap <silent> jj <ESC>
+
