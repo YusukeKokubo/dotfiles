@@ -10,6 +10,9 @@ set expandtab
 set autoindent
 set smartindent
 
+" ステータス行を常に表示
+set laststatus=2
+
 set clipboard+=unnamed
 
 inoremap <C-A> <Home>
@@ -33,6 +36,7 @@ NeoBundleFetch 'shougo/neobundle.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'grep.vim'
+NeoBundle 'tpope/vim-fugitive'
 
 call neobundle#end()
 
@@ -40,4 +44,9 @@ filetype plugin indent on
 
 " 未インストールのプラグインをインストールするか訪ねてくれる
 NeoBundleCheck
+
+
+" fugitve
+autocmd QuickFixCmdPost *grep* cwindow
+set statusline+=%{fugitive#statusline()}
 
