@@ -1,6 +1,6 @@
 #!/bin/sh
-ln -sf ~/dev/dotfiles/.vimrc ~/.vimrc
-ln -sf ~/dev/dotfiles/.ideavimrc ~/.ideavimrc
-ln -sf ~/dev/dotfiles/.gitconfig ~/.gitconfig
-ln -sf ~/dev/dotfiles/.gemrc ~/.gemrc
-ln -sf ~/dev/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
+ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/.gemrc ~/.gemrc
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
