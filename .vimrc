@@ -20,3 +20,22 @@ inoremap <C-D> <Del>
 
 inoremap <silent> jj <ESC>
 
+
+" --- NeoBundle ----
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+"neobundle自体をneobundleで管理
+NeoBundleFetch 'shougo/neobundle.vim'
+
+" plugin goes here.
+NeoBundle 'scrooloose/nerdtree'
+
+call neobundle#end()
+
+filetype plugin indent on
+
+" 未インストールのプラグインをインストールするか訪ねてくれる
+NeoBundleCheck
+
