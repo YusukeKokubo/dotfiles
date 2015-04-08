@@ -32,6 +32,7 @@ NeoBundleFetch 'shougo/neobundle.vim'
 " plugin goes here.
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'grep.vim'
 
 call neobundle#end()
 
