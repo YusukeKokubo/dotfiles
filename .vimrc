@@ -6,21 +6,24 @@ set number relativenumber
 
 syntax on
 
-set expandtab
-set autoindent
-set smartindent
+set expandtab   " タブを空白に変換する
+set autoindent  " インデントをいい感じに
+set smartindent " インデントをいい感じに
 
 " ステータス行を常に表示
 set laststatus=2
 
+" ヤンクをクリップボードを使う
 set clipboard+=unnamed
 
+" インサートモード時にはEmacs的な移動をする
 inoremap <C-A> <Home>
 inoremap <C-E> <End>
 inoremap <C-F> <Right>
 inoremap <C-B> <Left>
 inoremap <C-D> <Del>
 
+" インサートモード時にjjでノーマルモードに戻る
 inoremap <silent> jj <ESC>
 
 
@@ -33,11 +36,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'shougo/neobundle.vim'
 
 " plugin goes here.
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'grep.vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-surround'
 
 call neobundle#end()
 
@@ -48,6 +46,19 @@ NeoBundleCheck
 
 
 " fugitve
+NeoBundle 'tpope/vim-fugitive'
 autocmd QuickFixCmdPost *grep* cwindow
 set statusline+=%{fugitive#statusline()}
+
+" surround.vim
+NeoBundle 'tpope/vim-surround'
+
+" NERDTree
+NeoBundle 'scrooloose/nerdtree'
+
+" Unite.vim
+NeoBundle 'Shougo/unite.vim'
+
+" grep.vim
+NeoBundle 'grep.vim'
 
