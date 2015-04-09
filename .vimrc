@@ -37,6 +37,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'grep.vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-surround'
 
 call neobundle#end()
 
