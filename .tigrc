@@ -1,0 +1,3 @@
+bind main I !git rebase -i %(commit)
+bind diff I !git rebase -i %(commit)
+
