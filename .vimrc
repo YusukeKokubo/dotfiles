@@ -41,10 +41,6 @@ call neobundle#end()
 
 filetype plugin indent on
 
-" 未インストールのプラグインをインストールするか訪ねてくれる
-NeoBundleCheck
-
-
 " fugitve
 NeoBundle 'tpope/vim-fugitive'
 autocmd QuickFixCmdPost *grep* cwindow
@@ -62,3 +58,5 @@ NeoBundle 'Shougo/unite.vim'
 " grep.vim
 NeoBundle 'grep.vim'
 
+" 未インストールのプラグインをインストールするか訪ねてくれる
+NeoBundleCheck
