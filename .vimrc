@@ -60,3 +60,7 @@ NeoBundle 'grep.vim'
 
 " 未インストールのプラグインをインストールするか訪ねてくれる
 NeoBundleCheck
+
+" haml-lint
+let g:syntastic_haml_checkers = ['haml_lint'] 
+
