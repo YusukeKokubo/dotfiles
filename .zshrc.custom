@@ -1,0 +1,30 @@
+$(boot2docker shellinit)
+
+# agで検索した結果から選択し、ファイルを開く
+function agvi(){
+  path2=$(ag $* | peco | awk -F: '{printf  $1 " +" $2}'| sed -e 's/\+$//')
+  if [ -n "$path2" ]; then
+    echo "vim $path2"
+    vim $path2
+  fi  
+}
+
+
+# コマンドの履歴からpecoを使うやつ
+# http://qiita.com/ysk_1031/items/8cde9ce8b4d0870a129d
+
+setopt hist_ignore_all_dups
+
+function peco_select_history() {
+  local tac
+  if which tac > /dev/null; then
+    tac="tac"
+  else
+    tac="tail -r"
+  fi
+  BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+zle -N peco_select_history
+bindkey '^r' peco_select_history
