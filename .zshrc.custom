@@ -1,4 +1,13 @@
-$(boot2docker shellinit)
+# go
+export GOPATH=/Users/YusukeKokubo/gocode/
+export PATH=$GOPATH/bin:$PATH
+
+# appengine
+export PATH=$GOPATH/go_appengine/:$PATH
+
+# rbenv
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
 
 # agで検索した結果から選択し、ファイルを開く
 function agvi(){
@@ -28,3 +37,6 @@ function peco_select_history() {
 }
 zle -N peco_select_history
 bindkey '^r' peco_select_history
+
+alias g=git
+alias be='bundle exec'
