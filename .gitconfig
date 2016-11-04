@@ -1,6 +1,7 @@
 [user]
 	name = YusukeKokubo
 	email = yusuke.kokubo@gmail.com
+	signingkey = 0D726AF3
 [color]
 	status = auto
 	diff = auto
@@ -16,9 +17,6 @@
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [alias]
 	s = status
 	b = branch
@@ -38,4 +36,11 @@
 	p = push
 	pf = push -f
 	ru = remote update
+        cb = rev-parse --abbrev-ref HEAD
+        rho = !git rh origin/`git cb`
 
+echo = !echo test
+[gpg]
+	program = gpg2
+[commit]
+	gpgsign = true
