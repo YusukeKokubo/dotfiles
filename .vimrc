@@ -27,40 +27,46 @@ inoremap <C-D> <Del>
 inoremap <silent> jj <ESC>
 
 
-" --- NeoBundle ----
-set runtimepath+=~/.vim/bundle/neobundle.vim/
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+" Required:
+set runtimepath+=/Users/yusukekokubo/.vim/dein/repos/github.com/Shougo/dein.vim
 
-"neobundle自体をneobundleで管理
-NeoBundleFetch 'shougo/neobundle.vim'
+" Required:
+if dein#load_state('/Users/yusukekokubo/.vim/dein')
+  call dein#begin('/Users/yusukekokubo/.vim/dein')
 
-" plugin goes here.
+  " Let dein manage dein
+  " Required:
+  call dein#add('/Users/yusukekokubo/.vim/dein/repos/github.com/Shougo/dein.vim')
 
-call neobundle#end()
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('tpope/vim-surround')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-rails')
+  call dein#add('Shougo/neocomplete.vim')
 
+  " You can specify revision/branch/tag.
+  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
 filetype plugin indent on
+syntax enable
 
-" fugitve
-NeoBundle 'tpope/vim-fugitive'
-autocmd QuickFixCmdPost *grep* cwindow
-set statusline+=%{fugitive#statusline()}
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
 
-" surround.vim
-NeoBundle 'tpope/vim-surround'
-
-" NERDTree
-NeoBundle 'scrooloose/nerdtree'
-
-" Unite.vim
-NeoBundle 'Shougo/unite.vim'
-
-" grep.vim
-NeoBundle 'grep.vim'
-
-" 未インストールのプラグインをインストールするか訪ねてくれる
-NeoBundleCheck
-
-" haml-lint
-let g:syntastic_haml_checkers = ['haml_lint'] 
+"End dein Scripts-------------------------
 
