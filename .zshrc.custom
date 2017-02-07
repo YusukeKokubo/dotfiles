@@ -40,3 +40,6 @@ bindkey '^r' peco_select_history
 
 alias g=git
 alias be='bundle exec'
+
+alias sfinvoice='cd $(ghq root)/$(ghq list | grep sfinvoice)'
+
