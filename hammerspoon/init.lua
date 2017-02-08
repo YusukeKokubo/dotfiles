@@ -16,15 +16,22 @@ local slackKeybinds = {
         hs.eventtap.keyStroke({"alt"}, "Down")
     end),
     -- Disables cmd-w entirely, which is so annoying on slack
-    hotkey.new({"cmd"}, "w", function() return end)
+--    hotkey.new({"cmd"}, "w", function() return end)
 }
 local slackWatcher = hs.application.watcher.new(function(name, eventType, app)
+    hs.alert.show(name)
+    print(">>>>>>>>>>>>>>>>>>")
+    print(name)
+    print(eventType)
+    print(app)
     if eventType ~= hs.application.watcher.activated then return end
     local fnName = name == "Slack" and "enable" or "disable"
+--    print("fnName" + fnName)
     for i, keybind in ipairs(slackKeybinds) do
         -- Remember that lua is weird, so this is the same as keybind.enable() in JS, `this` is first param
         keybind[fnName](keybind)
     end
+    print("<<<<<<<<<<<<<<<<<")
 end)
 slackWatcher:start()
 
