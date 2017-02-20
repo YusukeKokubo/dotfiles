@@ -23,7 +23,7 @@ remap(nil, {'ctrl'}, '[', {}, 'escape')
 -- see also: http://blog.glidenote.com/blog/2014/08/06/custom-keybind-for-slack/
 remap('Slack', {'ctrl'}, 'p', {'alt'},          'up')
 remap('Slack', {'ctrl'}, 'n', {'alt'},          'down')
-remap('Slack', {'ctrl', 'command'}, 'm', {'alt', 'shift'}, 'down')
+remap('Slack', {'ctrl'}, 'm', {'alt', 'shift'}, 'down')
 
 
 -- original is https://gist.githubusercontent.com/mizoguche/fa1e2ad4f6580533b8c765fd09840d87/raw/e59c85b5547065b7fc1fcbe31fe10b46f957c8a1/init.lua
