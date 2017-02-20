@@ -5,6 +5,8 @@ export PATH=$GOPATH/bin:$PATH
 # appengine
 export PATH=$GOPATH/go_appengine/:$PATH
 
+export GHQ_ROOT=$GOPATH/src
+
 # rbenv
 #export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
