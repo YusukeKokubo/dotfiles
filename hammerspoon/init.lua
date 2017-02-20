@@ -1,39 +1,29 @@
--- original is https://github.com/STRML/init/blob/master/hammerspoon/init.lua
 
-local hotkey = require "hs.hotkey"
+-- original is https://gist.github.com/fukayatsu/3fe0fff3ea86c2443620c0efead90060
 
-local slackKeybinds = {
-    hotkey.new({"ctrl"}, "m", function()
-        hs.eventtap.keyStroke({"alt", "shift"}, "Down")
-    end),
-    hotkey.new({"ctrl", "shift"}, "m", function()
-        hs.eventtap.keyStroke({"alt", "shift"}, "Up")
-    end),
-    hotkey.new({"ctrl"}, "p", function()
-        hs.eventtap.keyStroke({"alt"}, "Up")
-    end),
-    hotkey.new({"ctrl"}, "n", function()
-        hs.eventtap.keyStroke({"alt"}, "Down")
-    end),
-    -- Disables cmd-w entirely, which is so annoying on slack
---    hotkey.new({"cmd"}, "w", function() return end)
-}
-local slackWatcher = hs.application.watcher.new(function(name, eventType, app)
-    hs.alert.show(name)
-    print(">>>>>>>>>>>>>>>>>>")
-    print(name)
-    print(eventType)
-    print(app)
-    if eventType ~= hs.application.watcher.activated then return end
-    local fnName = name == "Slack" and "enable" or "disable"
---    print("fnName" + fnName)
-    for i, keybind in ipairs(slackKeybinds) do
-        -- Remember that lua is weird, so this is the same as keybind.enable() in JS, `this` is first param
-        keybind[fnName](keybind)
-    end
-    print("<<<<<<<<<<<<<<<<<")
-end)
-slackWatcher:start()
+local function keyStroke(mod, key)
+  return function() hs.eventtap.keyStroke(mod, key) end
+end
+
+local function remap(appName, mod1, key1, mod2, key2)
+  if (not appName) then
+    return hs.hotkey.bind(mod1, key1, keyStroke(mod2, key2))
+  end
+
+  local hotkey = hs.hotkey.new(mod1, key1, keyStroke(mod2, key2))
+  return hs.window.filter.new(appName)
+    :subscribe(hs.window.filter.windowFocused,   function() hotkey:enable()  end)
+    :subscribe(hs.window.filter.windowUnfocused, function() hotkey:disable() end)
+end
+
+-- global remap
+remap(nil, {'ctrl'}, '[', {}, 'escape')
+
+-- remap for Slack.app
+-- see also: http://blog.glidenote.com/blog/2014/08/06/custom-keybind-for-slack/
+remap('Slack', {'ctrl'}, 'p', {'alt'},          'up')
+remap('Slack', {'ctrl'}, 'n', {'alt'},          'down')
+remap('Slack', {'ctrl', 'command'}, 'm', {'alt', 'shift'}, 'down')
 
 
 -- original is https://gist.githubusercontent.com/mizoguche/fa1e2ad4f6580533b8c765fd09840d87/raw/e59c85b5547065b7fc1fcbe31fe10b46f957c8a1/init.lua
