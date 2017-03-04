@@ -1,7 +1,6 @@
 [user]
 	name = YusukeKokubo
 	email = yusuke.kokubo@gmail.com
-	signingkey = 0D726AF3
 [color]
 	status = auto
 	diff = auto
