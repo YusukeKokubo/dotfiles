@@ -1,3 +1,13 @@
 bind main I !git rebase -i %(commit)
 bind diff I !git rebase -i %(commit)
 
+set diff-context = 6
+
+bind generic G none
+bind generic g move-first-line
+bind generic G move-last-line
+
+bind stage D ?git clean -d -f -- %(file)
+bind status x ?git clean -d -f
+
+bind generic + !git commit --amend --allow-empty
