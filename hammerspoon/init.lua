@@ -25,6 +25,10 @@ remap('Slack', {'ctrl'}, 'p', {'alt'},          'up')
 remap('Slack', {'ctrl'}, 'n', {'alt'},          'down')
 remap('Slack', {'ctrl'}, 'm', {'alt', 'shift'}, 'down')
 
+remap('Typetalk', {'ctrl'}, 'p', {'alt'},          'up')
+remap('Typetalk', {'ctrl'}, 'n', {'alt'},          'down')
+remap('Typetalk', {'ctrl'}, 'm', {'alt', 'shift'}, 'down')
+
 
 -- original is https://gist.githubusercontent.com/mizoguche/fa1e2ad4f6580533b8c765fd09840d87/raw/e59c85b5547065b7fc1fcbe31fe10b46f957c8a1/init.lua
 
