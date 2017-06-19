@@ -25,8 +25,8 @@ remap('Slack', {'ctrl'}, 'p', {'alt'},          'up')
 remap('Slack', {'ctrl'}, 'n', {'alt'},          'down')
 remap('Slack', {'ctrl'}, 'm', {'alt', 'shift'}, 'down')
 
-remap('Typetalk', {'ctrl'}, 'p', {'alt'},          'up')
-remap('Typetalk', {'ctrl'}, 'n', {'alt'},          'down')
+remap('Typetalk', {'ctrl'}, '\'', {'alt'},          'up')
+remap('Typetalk', {'ctrl'}, ';', {'alt'},          'down')
 remap('Typetalk', {'ctrl'}, 'm', {'alt', 'shift'}, 'down')
 
 
