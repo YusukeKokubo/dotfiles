@@ -1,11 +1,11 @@
-# go
-#export GOPATH=/Users/YusukeKokubo/gocode
+
+#export GOPATH=~/src
 #export PATH=$GOPATH/bin:$PATH
 
 # appengine
 #export PATH=$GOPATH/go_appengine/:$PATH
 
-export GHQ_ROOT=$GOPATH/src
+export GHQ_ROOT=~/src
 
 # rbenv
 #export PATH=$HOME/.rbenv/bin:$PATH
@@ -40,7 +40,25 @@ function peco_select_history() {
 zle -N peco_select_history
 bindkey '^r' peco_select_history
 
+# ghqのリポジトリへの移動が捗るやつ
+function peco-src () {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-src
+bindkey '^]' peco-src
+
+
+
 alias g=git
 alias be='bundle exec'
 
 alias o='(){cd $(ghq root)/$(ghq list | grep $1)}'
+
+# zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
