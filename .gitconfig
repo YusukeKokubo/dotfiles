@@ -43,3 +43,6 @@ echo = !echo test
 	program = gpg2
 [commit]
         #gpgsign = true
+[ghq]
+        root = ~/.src
+
