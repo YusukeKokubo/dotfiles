@@ -45,7 +45,7 @@ ZSH_THEME="mh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails ruby)
+plugins=(git osx sbt scala tig npm yarn docker git_remote_branch jsontools mvn)
 
 # User configuration
 
@@ -80,3 +80,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 source $HOME/.zshrc.custom
+

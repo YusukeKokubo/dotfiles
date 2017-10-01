@@ -15,6 +15,7 @@ set laststatus=2
 
 " ヤンクをクリップボードを使う
 set clipboard+=unnamed
+set clipboard+=autoselect
 
 " インサートモード時にはEmacs的な移動をする
 inoremap <C-A> <Home>

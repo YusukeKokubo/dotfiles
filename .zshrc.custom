@@ -1,11 +1,15 @@
 
-#export GOPATH=~/src
-#export PATH=$GOPATH/bin:$PATH
+export GOPATH=~/gohome
+export PATH=$GOPATH/bin:$PATH
 
 # appengine
 #export PATH=$GOPATH/go_appengine/:$PATH
 
 export GHQ_ROOT=~/src
+
+# Android SDK
+
+export ANDROID_HOME=/usr/local/Caskroom/android-sdk/3859397,26.0.1
 
 # rbenv
 #export PATH=$HOME/.rbenv/bin:$PATH
@@ -61,4 +65,11 @@ alias o='(){cd $(ghq root)/$(ghq list | grep $1)}'
 
 # zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
+
+PERL_HOME="~/perl5"
+PATH="${PERL_HOME}/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="${PERL_HOME}/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="${PERL_HOME}/${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"${PERL_HOME}\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=${PERL_HOME}"; export PERL_MM_OPT;
 

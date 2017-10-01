@@ -21,6 +21,7 @@
 	b = branch
 	bf = branch -f
 	bfm = branch -f master origin/master
+	bfd = branch -f develop origin/develop
 	ci = commit
 	cia = commit --amend
 	r  = rebase
