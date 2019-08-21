@@ -26,6 +26,7 @@ inoremap <C-D> <Del>
 
 " インサートモード時にjjでノーマルモードに戻る
 inoremap <silent> jj <ESC>
+inoremap <silent> っｊ <ESC>
 
 
 "dein Scripts-----------------------------

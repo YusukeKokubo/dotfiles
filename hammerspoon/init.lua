@@ -21,13 +21,16 @@ remap(nil, {'ctrl'}, '[', {}, 'escape')
 
 -- remap for Slack.app
 -- see also: http://blog.glidenote.com/blog/2014/08/06/custom-keybind-for-slack/
-remap('Slack', {'ctrl'}, 'p', {'alt'},          'up')
-remap('Slack', {'ctrl'}, 'n', {'alt'},          'down')
+remap('Slack', {'ctrl'}, '\'', {'alt'},          'up')
+remap('Slack', {'ctrl'}, ';', {'alt'},          'down')
 remap('Slack', {'ctrl'}, 'm', {'alt', 'shift'}, 'down')
+remap('Slack', {'ctrl'}, 'o', {'alt', 'shift'}, 'up')
+
 
 remap('Typetalk', {'ctrl'}, '\'', {'alt'},          'up')
 remap('Typetalk', {'ctrl'}, ';', {'alt'},          'down')
 remap('Typetalk', {'ctrl'}, 'm', {'alt', 'shift'}, 'down')
+remap('Typetalk', {'ctrl'}, 'o', {'alt', 'shift'}, 'up')
 
 
 -- original is https://gist.githubusercontent.com/mizoguche/fa1e2ad4f6580533b8c765fd09840d87/raw/e59c85b5547065b7fc1fcbe31fe10b46f957c8a1/init.lua
@@ -68,5 +71,5 @@ local function handleEvent(e)
     prevKeyCode = keyCode
 end
 
-eventtap = hs.eventtap.new({hs.eventtap.event.types.flagsChanged, hs.eventtap.event.types.keyDown, hs.eventtap.event.types.keyUp}, handleEvent)
-eventtap:start()
+-- eventtap = hs.eventtap.new({hs.eventtap.event.types.flagsChanged, hs.eventtap.event.types.keyDown, hs.eventtap.event.types.keyUp}, handleEvent)
+-- eventtap:start()

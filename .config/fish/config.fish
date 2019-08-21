@@ -7,7 +7,10 @@ balias g git
 balias v vim
 
 set -x GOPATH ~/gohome
-set -x GCLOUD /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/
+set -x GCLOUD /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk
+set -x GAE /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/google_appengine
 set -x GHQ_ROOT ~/src
 
 set PATH $GCLOUD/bin $PATH
+set PATH $GAE $PATH
+
