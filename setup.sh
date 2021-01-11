@@ -13,3 +13,4 @@ ln -sf ~/dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
 
 ln -sf ~/dotfiles/hammerspoon/init.lua ~/.hammerspoon/init.lua
 
+ln -sf ~/dotfiles/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
