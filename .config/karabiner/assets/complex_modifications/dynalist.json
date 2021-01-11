@@ -1,0 +1,44 @@
+{
+  "title": "Dynalist keyshot",
+  "conditions": [
+    {
+      "type": "frontmost_application_if",
+      "bundle_identifiers": ["^io\\.dynalist"]
+    }
+  ],
+  "rules": [
+    {
+      "description": "Dynalist: Control-n to down_arrow, Control-p to up_arrow",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

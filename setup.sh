@@ -14,3 +14,4 @@ ln -sf ~/dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
 ln -sf ~/dotfiles/hammerspoon/init.lua ~/.hammerspoon/init.lua
 
 ln -sf ~/dotfiles/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
+ln -sf ~/dotfiles/.config/karabiner/assets/complex_modifications/dynalist.json ~/.config/karabiner/assets/complex_modifications/dynalist.json
