@@ -15,3 +15,4 @@ ln -sf ~/dotfiles/hammerspoon/init.lua ~/.hammerspoon/init.lua
 
 ln -sf ~/dotfiles/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
 ln -sf ~/dotfiles/.config/karabiner/assets/complex_modifications/dynalist.json ~/.config/karabiner/assets/complex_modifications/dynalist.json
+ln -sf ~/dotfiles/.config/karabiner/assets/complex_modifications/slack.json ~/.config/karabiner/assets/complex_modifications/slack.json
