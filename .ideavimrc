@@ -1,5 +1,0 @@
-source ~/.vimrc
-imap <c-]> <esc>
-
-set surround
-
