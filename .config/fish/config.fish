@@ -15,6 +15,6 @@ set -x GHQ_ROOT ~/src
 set PATH $GCLOUD/bin $PATH
 set PATH $GAE $PATH
 
-set PATH /Applications/Visual\ Studio\ Code\ -\ Insiders.app/Contents/Resources/app/bin $PATH
+set PATH /Applications/Visual\ Studio\ Code\.app/Contents/Resources/app/bin $PATH
 set PATH /opt/homebrew/bin/brew $PATH
 set -g fish_user_paths "/opt/homebrew/bin" $fish_user_paths
