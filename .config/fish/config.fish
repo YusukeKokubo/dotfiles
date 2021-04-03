@@ -18,3 +18,16 @@ set PATH $GAE $PATH
 set PATH /Applications/Visual\ Studio\ Code\.app/Contents/Resources/app/bin $PATH
 set PATH /opt/homebrew/bin/brew $PATH
 set -g fish_user_paths "/opt/homebrew/bin" $fish_user_paths
+
+# Deno
+set DENO_INSTALL "/Users/yusukekokubo/.deno"
+set PATH $DENO_INSTALL/bin $PATH
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/yusukekokubo/google-cloud-sdk/path.fish.inc' ]; . '/Users/yusukekokubo/google-cloud-sdk/path.fish.inc'; end
+
+# pyenv
+source (pyenv init - | psub)
+
+# Rust
+set -gx PATH "$HOME/.cargo/bin" $PATH
